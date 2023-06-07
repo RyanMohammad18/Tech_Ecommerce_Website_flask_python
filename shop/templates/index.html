@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-info">
+  <a class="navbar-brand" href="#">Online Tech Shop</a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{{url_for('home')}}" >Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{url_for('aboutus')}}">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{url_for('login')}}"> Logout</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Category
+        </a>
+       <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/product">Mobile</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="{{url_for('computer_categories')}}">Computer</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="{{url_for('headphone_categories')}}">Headphone</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{url_for('registration')}}"> Sign-Up</a>
+      </li>
+
+    </ul>
+
+  </div>
+</nav>
+
+
+<div class="con">
+  <img src="https://images.pexels.com/photos/6995134/pexels-photo-6995134.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Avatar" class="img">
+  <div class="overlay">
+    <div class="text">
+       <h1>Hello World</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi consequatur cupiditate deleniti earum eum id illum, minus nihil nobis, numquam pariatur provident quae recusandae similique sit suscipit temporibus veniam, vero.</p>
+      <a href="{{url_for('categories')}}" class="btn btn-warning">Categories</a>
+    </div>
+
+  </div>
+</div>
+
+
+<!--CARD effect-->
+<div class="text2div">
+  <h1 class="lead mb-5 mt-5 text2 "> <b>Categories</b>  </h1>
+</div>
+
+
+<div class="card-deck">
+
+  <div class="card">
+    <img class="card-img-top" src="{{pic3}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Mobile</h5>
+      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+
+      <a href="/product" class="btn btn-outline-danger">View Product</a>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="{{pic2}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Computer</h5>
+      <p class="card-text">This has a computer text below as a natural lead-in to additional content.</p>
+     <a href="{{url_for('computer_categories')}}" class="btn btn-outline-danger">View Product</a>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="{{pic4}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Headphone</h5>
+      <p class="card-text">This is a Headphone with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+     <a href="{{url_for('categories')}}" class="btn btn-outline-danger">View all Category</a>
+    </div>
+  </div>
+</div>
+
+<a href="{{url_for('categories')}}" class="btn btn-outline-danger button1">View all Category</a>
+
+<a href="/addcategories" class="btn btn-outline-danger button1">Add Category</a>
+
+
+<!--footer-->
+
+<footer class="bg-light text-center text-white">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #3b5998;"
+        href="#!"
+        role="button"
+        ><i class="fa fa-facebook"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #55acee;"
+        href="#!"
+        role="button"
+        ><i class="fa fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #dd4b39;"
+        href="#!"
+        role="button"
+        ><i class="fa fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #ac2bac;"
+        href="#!"
+        role="button"
+        ><i class="fa fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #0082ca;"
+        href="#!"
+        role="button"
+        ><i class="fa fa-linkedin"></i
+      ></a>
+      <!-- Github -->
+      <a
+        class="btn text-white btn-floating m-1"
+        style="background-color: #333333;"
+        href="#!"
+        role="button"
+        ><i class="fa fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgb(60, 60, 60);">
+    © 2022 Copyright:
+    <a class="text-white" href="https://mdbootstrap.com/">RYAN & RAHAT</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+
+</body>
+</html>

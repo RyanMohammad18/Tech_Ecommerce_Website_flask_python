@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Creation</title>
+    <style>
+        .form{
+        width: 50%;
+        text-align: center;
+        margin-left: 25%;
+        }
+
+        .heading{
+        text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h2 class="heading"> Create a New  </h2>
+<form class="form" action="/addProduct" method="post" enctype="multipart/form-data">
+    <input type="text" name="categories" placeholder="Title"> <br> <br>
+    <input type="text" name="price" placeholder="price">
+    <input type="submit" value="submit">
+</form>
+
+{% if is_post == True %}
+    {% if categories_post == True %}
+        <h4 class="heading">Categories Uploaded</h4>
+    {% endif %}
+{% endif %}
+</body>
+</html>

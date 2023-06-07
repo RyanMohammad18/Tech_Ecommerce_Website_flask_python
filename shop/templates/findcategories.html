@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Find</title>
+</head>
+<body>
+<form action="/categories" method="post">
+    Id: <input type="text" name="categories" placeholder="categories"> <br>
+    <button type="submit">Submit</button>
+</form>
+{% if paisi %}
+{% for x in result %}
+ {{x}} : {{result[x]}}
+{% endfor %}
+{% else %}
+{% if post== False or paisi == False %}
+<h3 style="color:red">Not Found</h3>
+{% endif %}
+{% endif %}
+</body>
+</html>

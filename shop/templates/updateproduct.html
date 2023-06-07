@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Ctaegory</title>
+    <style>
+        .form{
+        width: 50%;
+        text-align: center;
+        margin-left: 25%;
+        }
+
+        .heading{
+        text-align: center;
+        }
+    </style>
+</head>
+<body>
+<h2 class="heading"> Update Product </h2>
+<form class="form" action="/addProduct" method="post">
+    <input type="text" name="categories" placeholder="Title of category" value="{{single_product['categories']}}"> <br> <br>
+    <input type="text" name="price" placeholder="Price" value="{{single_product['price']}}"> <br> <br>
+    <input type="submit" value="Update">
+</form>
+
+</body>
+</html>

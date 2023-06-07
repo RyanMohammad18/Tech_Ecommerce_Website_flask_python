@@ -1,0 +1,216 @@
+#############################################HTML
+<div class="header">
+    <p class="logo">LOGO</p>
+    <div class="cart">
+        <p id="count">0</p>
+    </div>
+</div>
+
+
+
+
+
+<div class="container">
+    <div id="root"></div>
+    <div class="sidebar">
+        <div class="head">
+            <p>My Cart</p>
+        </div>
+        <div id="cartitem">Your cart is empty</div>
+        <div class="foot">
+            <h3>Total</h3>
+            <h2 id="total">$ 0.00</h2>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+#######################css
+
+
+
+
+
+
+
+
+
+*{
+
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins',sans-serif;
+    font-size: 18px;
+
+
+
+}
+body{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+.header{
+    height: 80px;
+    width: 70%;
+    background-color: goldenrod;
+    border-radius: 3px;
+    margin: 30px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+
+
+}
+.header .logo{
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+
+
+}
+.cart{
+    display: flex;
+    background-color: white;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 10px;
+    border-radius: 3px;
+    width: 80px;
+
+
+
+}
+.cart p{
+    height: 22px;
+    width: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 22px;
+    background-color: goldenrod;
+    color: white;
+
+
+
+}
+.container{
+
+    display: flex;
+    width: 70%;
+    margin-bottom: 30px;
+
+
+
+}
+
+#root{
+
+    width: 60%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-tap: 20px;
+
+
+}
+.sidebar{
+
+    width: 40%;
+    border-radius: 5px;
+    background-color: #eee;
+    margin-left: 20px;
+    padding: 15px;
+    text-align: center;
+
+
+
+
+
+}
+.head{
+
+    background-color: goldenrod;
+    border-radius: 3px;
+    height: 40px;
+    padding: 10px;
+    margin-bottom: 20px;
+    color: white;
+    display: flex;
+    align-items: center;
+
+
+
+}
+.foot{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0px;
+    padding: 10px 0px;
+    border-top: 1px solid #333;
+
+
+}
+
+
+
+###################################js
+
+const product = [
+
+    {
+        id: 0,
+        image: 'images/1.jpg',
+        title: 'Z flip Foldable Mobile',
+        price: 120,
+
+
+    },
+    {
+
+        id: 1,
+        image: 'images/1.jpg',
+        title: 'Air pods pro',
+        price: 60,
+
+
+    }
+
+
+
+];
+const categories = [...new Set(product.map((item)=>
+    {return item}
+
+))]
+let i=0;
+
+document.getElementById('root').innerHTML = categories.map((item)=>
+{
+    var {image,title,price}=item;
+    return(
+
+        <div class='box'>
+            <div class='img-box'>
+                <img class='images' src=${image}></img>
+
+             </div>
+
+        <div class='bottom'>
+        <p>${title}</p>
+        <h2> $ ${price}.00 </h2> +
+        "<button onclick='addtocart("+(i++)+")'>Add to cart</button>"+
+        </div>
+        </div>
+
+    )
+}).join('')
